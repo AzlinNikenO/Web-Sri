@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HBD SRI!!</title>
+  <link rel="stylesheet" href="../bootstrap/bootstrap/css/bootstrap.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      background: url("https://cdn.shopify.com/s/files/1/0257/6718/2416/files/Party-Background-green-with-presents.jpg?v=1595051600");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .balloon-container {
+      position: relative;
+      margin-top: 100px;
+    }
+
+    .balloon {
+      display: inline-block;
+      width: 80px;
+      height: 100px;
+      margin: 10px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: relative;
+      box-shadow: inset -8px -10px 0 rgba(0, 0, 0, 0.1), inset 8px 8px 0 rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 100px;
+      font-family: 'Comic Sans MS', cursive;
+      animation: float 4s ease-in-out infinite, rise 8s linear forwards;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background-color: #444;
+      transform: translateX(-50%);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 1; }
+    }
+
+    canvas#confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translate(-50%, -60%); }
+      20% { opacity: 1; transform: translate(-50%, -50%); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -40%); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -55%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    .center-buttons {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    .btn-ucapan {
+      background: #21f621;
+      border-radius: 20px;
+      margin: 10px;
+      padding: 15px 20px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-ucapan:hover {
+      background: #3f72af;
+    }
+
+    .balloon:hover {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <canvas id="confetti"></canvas>
+
+  <!-- BALON -->
+  <div class="balloon-container">
+    <div class="balloon" style="background-color: red;">H</div>
+    <div class="balloon" style="background-color: orange;">A</div>
+    <div class="balloon" style="background-color: yellow; color: black;">P</div>
+    <div class="balloon" style="background-color: green;">P</div>
+    <div class="balloon" style="background-color: blue;">Y</div>
+  </div>
+
+  <div class="balloon-container">
+    <div class="balloon" style="background-color: pink;">B</div>
+    <div class="balloon" style="background-color: violet;">I</div>
+    <div class="balloon" style="background-color: lightblue;">R</div>
+    <div class="balloon" style="background-color: coral;">T</div>
+    <div class="balloon" style="background-color: gold;">H</div>
+    <div class="balloon" style="background-color: cyan; color: black;">D</div>
+    <div class="balloon" style="background-color: limegreen;">A</div>
+    <div class="balloon" style="background-color: tomato;">Y</div>
+  </div>
+
+  <div class="balloon-container">
+    <div class="balloon" style="background-color: hotpink;">S</div>
+    <div class="balloon" style="background-color: skyblue;">R</div>
+    <div class="balloon" style="background-color: lightgreen;">I</div>
+    <div class="balloon"></div>
+    <div class="balloon" style="background-color: yellow;">W</div>
+    <div class="balloon" style="background-color: orange;">A</div>
+    <div class="balloon" style="background-color: red;">H</div>
+    <div class="balloon" style="background-color: violet;">Y</div>
+    <div class="balloon" style="background-color: green;">U</div>
+    <div class="balloon" style="background-color: blue;">N</div>
+    <div class="balloon" style="background-color: gold;">I</div>
+  </div>
+
+  <!-- TOMBOL TENGAH -->
+  <div class="center-buttons" id="buttonContainer">
+    <a class="btn btn-danger btn-ucapan" href="../bootstrap/gabv2.html">🎂 Ucapan</a>
+  </div>
+
+  <script src="../bootstrap/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+
+
+    function showGreeting() {
+      const text = document.getElementById("greetingText");
+      text.style.display = "block";
+      setTimeout(() => {
+        text.style.display = "none";
+      }, 5000);
+    }
+
+    // Munculkan tombol tengah setelah 8 detik
+    setTimeout(() => {
+      document.getElementById("buttonContainer").style.display = "block";
+    }, 8000);
+  </script>
+</body>
+</html>
